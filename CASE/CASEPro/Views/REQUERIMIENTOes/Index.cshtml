@@ -1,0 +1,173 @@
+@model IEnumerable<CASEPro.Models.REQUERIMIENTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            CODIGO
+        </th>
+        <th>
+            TITULO
+        </th>
+        <th>
+            DESCRIPCION
+        </th>
+        <th>
+            COMPLEJIDAD
+        </th>
+        <th>
+            FECHAREVISION
+        </th>
+        <th>
+            COSTOESTIMADO
+        </th>
+        <th>
+            LINEABASE
+        </th>
+        <th>
+            PROYECTO_ID
+        </th>
+        <th>
+            TIPO_ID
+        </th>
+        <th>
+            CATEGORIA_ID
+        </th>
+        <th>
+            ESTADO_ID
+        </th>
+        <th>
+            RESPONSABLE_ID
+        </th>
+        <th>
+            CREADOR_ID
+        </th>
+        <th>
+            DOCUMENTOS
+        </th>
+        <th>
+            PROYECTO
+        </th>
+        <th>
+            REQUERIMIENTO_CATEGORIAS
+        </th>
+        <th>
+            REQUERIMIENTO_DEPENDENCIAS
+        </th>
+        <th>
+            REQUERIMIENTO_DEPENDENCIAS1
+        </th>
+        <th>
+            REQUERIMIENTO_DETALLES
+        </th>
+        <th>
+            REQUERIMIENTO_ESTADOS
+        </th>
+        <th>
+            REQUERIMIENTO_TIPOS
+        </th>
+        <th>
+            USUARIO
+        </th>
+        <th>
+            USUARIO1
+        </th>
+        <th>
+            CASOS_USOS
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        <td>
+			@item.CODIGO
+        </td>
+        <td>
+			@item.TITULO
+        </td>
+        <td>
+			@item.DESCRIPCION
+        </td>
+        <td>
+			@String.Format("{0:F}", item.COMPLEJIDAD)
+        </td>
+        <td>
+			@String.Format("{0:g}", item.FECHAREVISION)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.COSTOESTIMADO)
+        </td>
+        <td>
+			@item.LINEABASE
+        </td>
+        <td>
+			@String.Format("{0:F}", item.PROYECTO_ID)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.TIPO_ID)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.CATEGORIA_ID)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.ESTADO_ID)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.RESPONSABLE_ID)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.CREADOR_ID)
+        </td>
+        <td>
+			@(item.DOCUMENTOS == null ? "None" : item.DOCUMENTOS.Count.ToString())
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.PROYECTO).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.REQUERIMIENTO_CATEGORIAS).ToString()
+        </td>
+        <td>
+			@(item.REQUERIMIENTO_DEPENDENCIAS == null ? "None" : item.REQUERIMIENTO_DEPENDENCIAS.Count.ToString())
+        </td>
+        <td>
+			@(item.REQUERIMIENTO_DEPENDENCIAS1 == null ? "None" : item.REQUERIMIENTO_DEPENDENCIAS1.Count.ToString())
+        </td>
+        <td>
+			@(item.REQUERIMIENTO_DETALLES == null ? "None" : item.REQUERIMIENTO_DETALLES.Count.ToString())
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.REQUERIMIENTO_ESTADOS).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.REQUERIMIENTO_TIPOS).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.USUARIO).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.USUARIO1).ToString()
+        </td>
+        <td>
+			@(item.CASOS_USOS == null ? "None" : item.CASOS_USOS.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

@@ -1,0 +1,1400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CASE_JModel.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="CASE_JModelStoreContainer">
+          <EntitySet Name="CASO_USO_DEPENDENCIAS" EntityType="CASE_JModel.Store.CASO_USO_DEPENDENCIAS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="CASO_USO_DETALLES" EntityType="CASE_JModel.Store.CASO_USO_DETALLES" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="CASOS_USOS" EntityType="CASE_JModel.Store.CASOS_USOS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="DETALLE_TIPOS" EntityType="CASE_JModel.Store.DETALLE_TIPOS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="DOCUMENTOS" EntityType="CASE_JModel.Store.DOCUMENTOS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="INTEGRANTES" EntityType="CASE_JModel.Store.INTEGRANTES" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="OPERACIONES" EntityType="CASE_JModel.Store.OPERACIONES" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="PROYECTO_DETALLES" EntityType="CASE_JModel.Store.PROYECTO_DETALLES" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="PROYECTOS" EntityType="CASE_JModel.Store.PROYECTOS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="REQUERIMIENTO_CASOS_USOS" EntityType="CASE_JModel.Store.REQUERIMIENTO_CASOS_USOS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="REQUERIMIENTO_CATEGORIAS" EntityType="CASE_JModel.Store.REQUERIMIENTO_CATEGORIAS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="REQUERIMIENTO_DEPENDENCIAS" EntityType="CASE_JModel.Store.REQUERIMIENTO_DEPENDENCIAS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="REQUERIMIENTO_DETALLES" EntityType="CASE_JModel.Store.REQUERIMIENTO_DETALLES" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="REQUERIMIENTO_ESTADOS" EntityType="CASE_JModel.Store.REQUERIMIENTO_ESTADOS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="REQUERIMIENTO_TIPOS" EntityType="CASE_JModel.Store.REQUERIMIENTO_TIPOS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="REQUERIMIENTOS" EntityType="CASE_JModel.Store.REQUERIMIENTOS" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="ROL_OPERACIONES" EntityType="CASE_JModel.Store.ROL_OPERACIONES" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="ROLES" EntityType="CASE_JModel.Store.ROLES" store:Type="Tables" Schema="CASE" />
+          <EntitySet Name="USUARIOS" EntityType="CASE_JModel.Store.USUARIOS" store:Type="Tables" Schema="CASE" />
+          <AssociationSet Name="FK_CASOSUSO_CREADOR_ID" Association="CASE_JModel.Store.FK_CASOSUSO_CREADOR_ID">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="CASOS_USOS" EntitySet="CASOS_USOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUD_CASO_USO_DEPENDENDE_ID" Association="CASE_JModel.Store.FK_CUD_CASO_USO_DEPENDENDE_ID">
+            <End Role="CASOS_USOS" EntitySet="CASOS_USOS" />
+            <End Role="CASO_USO_DEPENDENCIAS" EntitySet="CASO_USO_DEPENDENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUD_CASO_USO_ID" Association="CASE_JModel.Store.FK_CUD_CASO_USO_ID">
+            <End Role="CASOS_USOS" EntitySet="CASOS_USOS" />
+            <End Role="CASO_USO_DEPENDENCIAS" EntitySet="CASO_USO_DEPENDENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUDT_CASO_USO_ID" Association="CASE_JModel.Store.FK_CUDT_CASO_USO_ID">
+            <End Role="CASOS_USOS" EntitySet="CASOS_USOS" />
+            <End Role="CASO_USO_DETALLES" EntitySet="CASO_USO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUDT_DETALLE_TIPO_ID" Association="CASE_JModel.Store.FK_CUDT_DETALLE_TIPO_ID">
+            <End Role="DETALLE_TIPOS" EntitySet="DETALLE_TIPOS" />
+            <End Role="CASO_USO_DETALLES" EntitySet="CASO_USO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOCS_REQUERIMIENTO_ID" Association="CASE_JModel.Store.FK_DOCS_REQUERIMIENTO_ID">
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+            <End Role="DOCUMENTOS" EntitySet="DOCUMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INTEGRANDE_PROYECTO_ID" Association="CASE_JModel.Store.FK_INTEGRANDE_PROYECTO_ID">
+            <End Role="PROYECTOS" EntitySet="PROYECTOS" />
+            <End Role="INTEGRANTES" EntitySet="INTEGRANTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INTEGRANDE_ROL_ID" Association="CASE_JModel.Store.FK_INTEGRANDE_ROL_ID">
+            <End Role="ROLES" EntitySet="ROLES" />
+            <End Role="INTEGRANTES" EntitySet="INTEGRANTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INTEGRANDE_USUARIO_ID" Association="CASE_JModel.Store.FK_INTEGRANDE_USUARIO_ID">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="INTEGRANTES" EntitySet="INTEGRANTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRYDT_DETALLE_TIPO_ID" Association="CASE_JModel.Store.FK_PRYDT_DETALLE_TIPO_ID">
+            <End Role="DETALLE_TIPOS" EntitySet="DETALLE_TIPOS" />
+            <End Role="PROYECTO_DETALLES" EntitySet="PROYECTO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRYDT_PROYECTO_ID" Association="CASE_JModel.Store.FK_PRYDT_PROYECTO_ID">
+            <End Role="PROYECTOS" EntitySet="PROYECTOS" />
+            <End Role="PROYECTO_DETALLES" EntitySet="PROYECTO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_CATEGORIA_ID" Association="CASE_JModel.Store.FK_REQ_CATEGORIA_ID">
+            <End Role="REQUERIMIENTO_CATEGORIAS" EntitySet="REQUERIMIENTO_CATEGORIAS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_CREADOR_ID" Association="CASE_JModel.Store.FK_REQ_CREADOR_ID">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_ESTADO_ID" Association="CASE_JModel.Store.FK_REQ_ESTADO_ID">
+            <End Role="REQUERIMIENTO_ESTADOS" EntitySet="REQUERIMIENTO_ESTADOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_PROYECTO_ID" Association="CASE_JModel.Store.FK_REQ_PROYECTO_ID">
+            <End Role="PROYECTOS" EntitySet="PROYECTOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_RESPONSABLE_ID" Association="CASE_JModel.Store.FK_REQ_RESPONSABLE_ID">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_TIPO_ID" Association="CASE_JModel.Store.FK_REQ_TIPO_ID">
+            <End Role="REQUERIMIENTO_TIPOS" EntitySet="REQUERIMIENTO_TIPOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQCU_CASO_USO_ID" Association="CASE_JModel.Store.FK_REQCU_CASO_USO_ID">
+            <End Role="CASOS_USOS" EntitySet="CASOS_USOS" />
+            <End Role="REQUERIMIENTO_CASOS_USOS" EntitySet="REQUERIMIENTO_CASOS_USOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQCU_REQUERIMIENTO_ID" Association="CASE_JModel.Store.FK_REQCU_REQUERIMIENTO_ID">
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+            <End Role="REQUERIMIENTO_CASOS_USOS" EntitySet="REQUERIMIENTO_CASOS_USOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQDT_DETALLE_TIPO_ID" Association="CASE_JModel.Store.FK_REQDT_DETALLE_TIPO_ID">
+            <End Role="DETALLE_TIPOS" EntitySet="DETALLE_TIPOS" />
+            <End Role="REQUERIMIENTO_DETALLES" EntitySet="REQUERIMIENTO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQDT_REQUERIMIENTO_ID" Association="CASE_JModel.Store.FK_REQDT_REQUERIMIENTO_ID">
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+            <End Role="REQUERIMIENTO_DETALLES" EntitySet="REQUERIMIENTO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLOP_OPERACION_ID" Association="CASE_JModel.Store.FK_ROLOP_OPERACION_ID">
+            <End Role="OPERACIONES" EntitySet="OPERACIONES" />
+            <End Role="ROL_OPERACIONES" EntitySet="ROL_OPERACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLOP_ROL_ID" Association="CASE_JModel.Store.FK_ROLOP_ROL_ID">
+            <End Role="ROLES" EntitySet="ROLES" />
+            <End Role="ROL_OPERACIONES" EntitySet="ROL_OPERACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RQD_REQ_DEPENDENDE_ID" Association="CASE_JModel.Store.FK_RQD_REQ_DEPENDENDE_ID">
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+            <End Role="REQUERIMIENTO_DEPENDENCIAS" EntitySet="REQUERIMIENTO_DEPENDENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RQD_REQ_ID" Association="CASE_JModel.Store.FK_RQD_REQ_ID">
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+            <End Role="REQUERIMIENTO_DEPENDENCIAS" EntitySet="REQUERIMIENTO_DEPENDENCIAS" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CASO_USO_DEPENDENCIAS">
+          <Key>
+            <PropertyRef Name="CASO_USO_ID" />
+            <PropertyRef Name="CASO_USO_DEPENDENDE_ID" />
+          </Key>
+          <Property Name="CASO_USO_ID" Type="number" Nullable="false" />
+          <Property Name="CASO_USO_DEPENDENDE_ID" Type="number" Nullable="false" />
+          <Property Name="TIPO_DEPENDENCIA" Type="varchar2" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="CASO_USO_DETALLES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="CASO_USO_ID" Type="number" Nullable="false" />
+          <Property Name="DETALLE_TIPO_ID" Type="number" Nullable="false" />
+          <Property Name="CONTENIDO" Type="varchar2" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="CASOS_USOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="CODIGO" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="DESCRIPCION" Type="varchar2" Nullable="false" MaxLength="256" />
+          <Property Name="CONTEXTO" Type="varchar2" Nullable="false" MaxLength="45" />
+          <Property Name="IMPORTANCIA" Type="number" Nullable="false" />
+          <Property Name="CURSONORMAL" Type="varchar2" Nullable="false" MaxLength="256" />
+          <Property Name="CREADOR_ID" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DETALLE_TIPOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="DOCUMENTOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="45" />
+          <Property Name="TIPO" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="UBICACION" Type="varchar2" Nullable="false" MaxLength="128" />
+          <Property Name="REQUERIMIENTO_ID" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INTEGRANTES">
+          <Key>
+            <PropertyRef Name="USUARIO_ID" />
+            <PropertyRef Name="PROYECTO_ID" />
+            <PropertyRef Name="ROL_ID" />
+          </Key>
+          <Property Name="USUARIO_ID" Type="number" Nullable="false" />
+          <Property Name="PROYECTO_ID" Type="number" Nullable="false" />
+          <Property Name="ROL_ID" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OPERACIONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="PROYECTO_DETALLES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="PROYECTO_ID" Type="number" Nullable="false" />
+          <Property Name="DETALLE_TIPO_ID" Type="number" Nullable="false" />
+          <Property Name="CONTENIDO" Type="varchar2" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="PROYECTOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="60" />
+          <Property Name="OBJETIVOPRIMARIO" Type="varchar2" Nullable="false" MaxLength="256" />
+          <Property Name="ALCANCE" Type="varchar2" Nullable="false" MaxLength="256" />
+          <Property Name="PRIORIDAD" Type="number" Nullable="false" />
+          <Property Name="FASE" Type="number" Nullable="false" />
+          <Property Name="VERSION" Type="varchar2" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_CASOS_USOS">
+          <Key>
+            <PropertyRef Name="REQUERIMIENTO_ID" />
+            <PropertyRef Name="CASO_USO_ID" />
+          </Key>
+          <Property Name="REQUERIMIENTO_ID" Type="number" Nullable="false" />
+          <Property Name="CASO_USO_ID" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_CATEGORIAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_DEPENDENCIAS">
+          <Key>
+            <PropertyRef Name="REQ_ID" />
+            <PropertyRef Name="REQ_DEPENDENDE_ID" />
+          </Key>
+          <Property Name="REQ_ID" Type="number" Nullable="false" />
+          <Property Name="REQ_DEPENDENDE_ID" Type="number" Nullable="false" />
+          <Property Name="TIPO_DEPENDENCIA" Type="varchar2" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_DETALLES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="REQUERIMIENTO_ID" Type="number" Nullable="false" />
+          <Property Name="DETALLE_TIPO_ID" Type="number" Nullable="false" />
+          <Property Name="CONTENIDO" Type="varchar2" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_ESTADOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_TIPOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="CODIGO" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="TITULO" Type="varchar2" Nullable="false" MaxLength="60" />
+          <Property Name="DESCRIPCION" Type="varchar2" Nullable="false" MaxLength="256" />
+          <Property Name="COMPLEJIDAD" Type="number" Nullable="false" />
+          <Property Name="FECHAREVISION" Type="date" Nullable="false" />
+          <Property Name="COSTOESTIMADO" Type="float" Nullable="false" Precision="126" />
+          <Property Name="LINEABASE" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="PROYECTO_ID" Type="number" Nullable="false" />
+          <Property Name="TIPO_ID" Type="number" Nullable="false" />
+          <Property Name="CATEGORIA_ID" Type="number" Nullable="false" />
+          <Property Name="ESTADO_ID" Type="number" Nullable="false" />
+          <Property Name="RESPONSABLE_ID" Type="number" Nullable="false" />
+          <Property Name="CREADOR_ID" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROL_OPERACIONES">
+          <Key>
+            <PropertyRef Name="ROL_ID" />
+            <PropertyRef Name="OPERACION_ID" />
+          </Key>
+          <Property Name="ROL_ID" Type="number" Nullable="false" />
+          <Property Name="OPERACION_ID" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROLES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" Nullable="false" MaxLength="128" />
+          <Property Name="CONTRASENA" Type="varchar2" Nullable="false" MaxLength="128" />
+          <Property Name="ESTADO" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <Association Name="FK_CASOSUSO_CREADOR_ID">
+          <End Role="USUARIOS" Type="CASE_JModel.Store.USUARIOS" Multiplicity="1" />
+          <End Role="CASOS_USOS" Type="CASE_JModel.Store.CASOS_USOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CASOS_USOS">
+              <PropertyRef Name="CREADOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUD_CASO_USO_DEPENDENDE_ID">
+          <End Role="CASOS_USOS" Type="CASE_JModel.Store.CASOS_USOS" Multiplicity="1" />
+          <End Role="CASO_USO_DEPENDENCIAS" Type="CASE_JModel.Store.CASO_USO_DEPENDENCIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CASOS_USOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CASO_USO_DEPENDENCIAS">
+              <PropertyRef Name="CASO_USO_DEPENDENDE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUD_CASO_USO_ID">
+          <End Role="CASOS_USOS" Type="CASE_JModel.Store.CASOS_USOS" Multiplicity="1" />
+          <End Role="CASO_USO_DEPENDENCIAS" Type="CASE_JModel.Store.CASO_USO_DEPENDENCIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CASOS_USOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CASO_USO_DEPENDENCIAS">
+              <PropertyRef Name="CASO_USO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUDT_CASO_USO_ID">
+          <End Role="CASOS_USOS" Type="CASE_JModel.Store.CASOS_USOS" Multiplicity="1" />
+          <End Role="CASO_USO_DETALLES" Type="CASE_JModel.Store.CASO_USO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CASOS_USOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CASO_USO_DETALLES">
+              <PropertyRef Name="CASO_USO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUDT_DETALLE_TIPO_ID">
+          <End Role="DETALLE_TIPOS" Type="CASE_JModel.Store.DETALLE_TIPOS" Multiplicity="1" />
+          <End Role="CASO_USO_DETALLES" Type="CASE_JModel.Store.CASO_USO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DETALLE_TIPOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CASO_USO_DETALLES">
+              <PropertyRef Name="DETALLE_TIPO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOCS_REQUERIMIENTO_ID">
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="1" />
+          <End Role="DOCUMENTOS" Type="CASE_JModel.Store.DOCUMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DOCUMENTOS">
+              <PropertyRef Name="REQUERIMIENTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INTEGRANDE_PROYECTO_ID">
+          <End Role="PROYECTOS" Type="CASE_JModel.Store.PROYECTOS" Multiplicity="1" />
+          <End Role="INTEGRANTES" Type="CASE_JModel.Store.INTEGRANTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROYECTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="INTEGRANTES">
+              <PropertyRef Name="PROYECTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INTEGRANDE_ROL_ID">
+          <End Role="ROLES" Type="CASE_JModel.Store.ROLES" Multiplicity="1" />
+          <End Role="INTEGRANTES" Type="CASE_JModel.Store.INTEGRANTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="INTEGRANTES">
+              <PropertyRef Name="ROL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INTEGRANDE_USUARIO_ID">
+          <End Role="USUARIOS" Type="CASE_JModel.Store.USUARIOS" Multiplicity="1" />
+          <End Role="INTEGRANTES" Type="CASE_JModel.Store.INTEGRANTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="INTEGRANTES">
+              <PropertyRef Name="USUARIO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRYDT_DETALLE_TIPO_ID">
+          <End Role="DETALLE_TIPOS" Type="CASE_JModel.Store.DETALLE_TIPOS" Multiplicity="1" />
+          <End Role="PROYECTO_DETALLES" Type="CASE_JModel.Store.PROYECTO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DETALLE_TIPOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROYECTO_DETALLES">
+              <PropertyRef Name="DETALLE_TIPO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRYDT_PROYECTO_ID">
+          <End Role="PROYECTOS" Type="CASE_JModel.Store.PROYECTOS" Multiplicity="1" />
+          <End Role="PROYECTO_DETALLES" Type="CASE_JModel.Store.PROYECTO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROYECTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROYECTO_DETALLES">
+              <PropertyRef Name="PROYECTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_CATEGORIA_ID">
+          <End Role="REQUERIMIENTO_CATEGORIAS" Type="CASE_JModel.Store.REQUERIMIENTO_CATEGORIAS" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTO_CATEGORIAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="CATEGORIA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_CREADOR_ID">
+          <End Role="USUARIOS" Type="CASE_JModel.Store.USUARIOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="CREADOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_ESTADO_ID">
+          <End Role="REQUERIMIENTO_ESTADOS" Type="CASE_JModel.Store.REQUERIMIENTO_ESTADOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTO_ESTADOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="ESTADO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_PROYECTO_ID">
+          <End Role="PROYECTOS" Type="CASE_JModel.Store.PROYECTOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROYECTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="PROYECTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_RESPONSABLE_ID">
+          <End Role="USUARIOS" Type="CASE_JModel.Store.USUARIOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="RESPONSABLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_TIPO_ID">
+          <End Role="REQUERIMIENTO_TIPOS" Type="CASE_JModel.Store.REQUERIMIENTO_TIPOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTO_TIPOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="TIPO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQCU_CASO_USO_ID">
+          <End Role="CASOS_USOS" Type="CASE_JModel.Store.CASOS_USOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTO_CASOS_USOS" Type="CASE_JModel.Store.REQUERIMIENTO_CASOS_USOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CASOS_USOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTO_CASOS_USOS">
+              <PropertyRef Name="CASO_USO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQCU_REQUERIMIENTO_ID">
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTO_CASOS_USOS" Type="CASE_JModel.Store.REQUERIMIENTO_CASOS_USOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTO_CASOS_USOS">
+              <PropertyRef Name="REQUERIMIENTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQDT_DETALLE_TIPO_ID">
+          <End Role="DETALLE_TIPOS" Type="CASE_JModel.Store.DETALLE_TIPOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTO_DETALLES" Type="CASE_JModel.Store.REQUERIMIENTO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DETALLE_TIPOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTO_DETALLES">
+              <PropertyRef Name="DETALLE_TIPO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQDT_REQUERIMIENTO_ID">
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTO_DETALLES" Type="CASE_JModel.Store.REQUERIMIENTO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTO_DETALLES">
+              <PropertyRef Name="REQUERIMIENTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLOP_OPERACION_ID">
+          <End Role="OPERACIONES" Type="CASE_JModel.Store.OPERACIONES" Multiplicity="1" />
+          <End Role="ROL_OPERACIONES" Type="CASE_JModel.Store.ROL_OPERACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPERACIONES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ROL_OPERACIONES">
+              <PropertyRef Name="OPERACION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLOP_ROL_ID">
+          <End Role="ROLES" Type="CASE_JModel.Store.ROLES" Multiplicity="1" />
+          <End Role="ROL_OPERACIONES" Type="CASE_JModel.Store.ROL_OPERACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ROL_OPERACIONES">
+              <PropertyRef Name="ROL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RQD_REQ_DEPENDENDE_ID">
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTO_DEPENDENCIAS" Type="CASE_JModel.Store.REQUERIMIENTO_DEPENDENCIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTO_DEPENDENCIAS">
+              <PropertyRef Name="REQ_DEPENDENDE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RQD_REQ_ID">
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.Store.REQUERIMIENTOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTO_DEPENDENCIAS" Type="CASE_JModel.Store.REQUERIMIENTO_DEPENDENCIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTO_DEPENDENCIAS">
+              <PropertyRef Name="REQ_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CASE_JModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CASE_JEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="CASO_USO_DEPENDENCIAS" EntityType="CASE_JModel.CASO_USO_DEPENDENCIAS" />
+          <EntitySet Name="CASO_USO_DETALLES" EntityType="CASE_JModel.CASO_USO_DETALLES" />
+          <EntitySet Name="CASOS_USOS" EntityType="CASE_JModel.CASOS_USOS" />
+          <EntitySet Name="DETALLE_TIPOS" EntityType="CASE_JModel.DETALLE_TIPOS" />
+          <EntitySet Name="DOCUMENTOS" EntityType="CASE_JModel.DOCUMENTO" />
+          <EntitySet Name="INTEGRANTES" EntityType="CASE_JModel.INTEGRANTE" />
+          <EntitySet Name="OPERACIONES" EntityType="CASE_JModel.OPERACIONE" />
+          <EntitySet Name="PROYECTO_DETALLES" EntityType="CASE_JModel.PROYECTO_DETALLES" />
+          <EntitySet Name="PROYECTOS" EntityType="CASE_JModel.PROYECTO" />
+          <EntitySet Name="REQUERIMIENTO_CATEGORIAS" EntityType="CASE_JModel.REQUERIMIENTO_CATEGORIAS" />
+          <EntitySet Name="REQUERIMIENTO_DEPENDENCIAS" EntityType="CASE_JModel.REQUERIMIENTO_DEPENDENCIAS" />
+          <EntitySet Name="REQUERIMIENTO_DETALLES" EntityType="CASE_JModel.REQUERIMIENTO_DETALLES" />
+          <EntitySet Name="REQUERIMIENTO_ESTADOS" EntityType="CASE_JModel.REQUERIMIENTO_ESTADOS" />
+          <EntitySet Name="REQUERIMIENTO_TIPOS" EntityType="CASE_JModel.REQUERIMIENTO_TIPOS" />
+          <EntitySet Name="REQUERIMIENTOS" EntityType="CASE_JModel.REQUERIMIENTO" />
+          <EntitySet Name="ROLES" EntityType="CASE_JModel.ROLE" />
+          <EntitySet Name="USUARIOS" EntityType="CASE_JModel.USUARIO" />
+          <AssociationSet Name="FK_CUD_CASO_USO_DEPENDENDE_ID" Association="CASE_JModel.FK_CUD_CASO_USO_DEPENDENDE_ID">
+            <End Role="CASOS_USOS" EntitySet="CASOS_USOS" />
+            <End Role="CASO_USO_DEPENDENCIAS" EntitySet="CASO_USO_DEPENDENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUD_CASO_USO_ID" Association="CASE_JModel.FK_CUD_CASO_USO_ID">
+            <End Role="CASOS_USOS" EntitySet="CASOS_USOS" />
+            <End Role="CASO_USO_DEPENDENCIAS" EntitySet="CASO_USO_DEPENDENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUDT_CASO_USO_ID" Association="CASE_JModel.FK_CUDT_CASO_USO_ID">
+            <End Role="CASOS_USOS" EntitySet="CASOS_USOS" />
+            <End Role="CASO_USO_DETALLES" EntitySet="CASO_USO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUDT_DETALLE_TIPO_ID" Association="CASE_JModel.FK_CUDT_DETALLE_TIPO_ID">
+            <End Role="DETALLE_TIPOS" EntitySet="DETALLE_TIPOS" />
+            <End Role="CASO_USO_DETALLES" EntitySet="CASO_USO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CASOSUSO_CREADOR_ID" Association="CASE_JModel.FK_CASOSUSO_CREADOR_ID">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="CASOS_USOS" EntitySet="CASOS_USOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRYDT_DETALLE_TIPO_ID" Association="CASE_JModel.FK_PRYDT_DETALLE_TIPO_ID">
+            <End Role="DETALLE_TIPOS" EntitySet="DETALLE_TIPOS" />
+            <End Role="PROYECTO_DETALLES" EntitySet="PROYECTO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQDT_DETALLE_TIPO_ID" Association="CASE_JModel.FK_REQDT_DETALLE_TIPO_ID">
+            <End Role="DETALLE_TIPOS" EntitySet="DETALLE_TIPOS" />
+            <End Role="REQUERIMIENTO_DETALLES" EntitySet="REQUERIMIENTO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOCS_REQUERIMIENTO_ID" Association="CASE_JModel.FK_DOCS_REQUERIMIENTO_ID">
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+            <End Role="DOCUMENTOS" EntitySet="DOCUMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INTEGRANDE_PROYECTO_ID" Association="CASE_JModel.FK_INTEGRANDE_PROYECTO_ID">
+            <End Role="PROYECTOS" EntitySet="PROYECTOS" />
+            <End Role="INTEGRANTES" EntitySet="INTEGRANTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INTEGRANDE_ROL_ID" Association="CASE_JModel.FK_INTEGRANDE_ROL_ID">
+            <End Role="ROLES" EntitySet="ROLES" />
+            <End Role="INTEGRANTES" EntitySet="INTEGRANTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INTEGRANDE_USUARIO_ID" Association="CASE_JModel.FK_INTEGRANDE_USUARIO_ID">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="INTEGRANTES" EntitySet="INTEGRANTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRYDT_PROYECTO_ID" Association="CASE_JModel.FK_PRYDT_PROYECTO_ID">
+            <End Role="PROYECTOS" EntitySet="PROYECTOS" />
+            <End Role="PROYECTO_DETALLES" EntitySet="PROYECTO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_PROYECTO_ID" Association="CASE_JModel.FK_REQ_PROYECTO_ID">
+            <End Role="PROYECTOS" EntitySet="PROYECTOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_CATEGORIA_ID" Association="CASE_JModel.FK_REQ_CATEGORIA_ID">
+            <End Role="REQUERIMIENTO_CATEGORIAS" EntitySet="REQUERIMIENTO_CATEGORIAS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RQD_REQ_DEPENDENDE_ID" Association="CASE_JModel.FK_RQD_REQ_DEPENDENDE_ID">
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+            <End Role="REQUERIMIENTO_DEPENDENCIAS" EntitySet="REQUERIMIENTO_DEPENDENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RQD_REQ_ID" Association="CASE_JModel.FK_RQD_REQ_ID">
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+            <End Role="REQUERIMIENTO_DEPENDENCIAS" EntitySet="REQUERIMIENTO_DEPENDENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQDT_REQUERIMIENTO_ID" Association="CASE_JModel.FK_REQDT_REQUERIMIENTO_ID">
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+            <End Role="REQUERIMIENTO_DETALLES" EntitySet="REQUERIMIENTO_DETALLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_ESTADO_ID" Association="CASE_JModel.FK_REQ_ESTADO_ID">
+            <End Role="REQUERIMIENTO_ESTADOS" EntitySet="REQUERIMIENTO_ESTADOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_TIPO_ID" Association="CASE_JModel.FK_REQ_TIPO_ID">
+            <End Role="REQUERIMIENTO_TIPOS" EntitySet="REQUERIMIENTO_TIPOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_CREADOR_ID" Association="CASE_JModel.FK_REQ_CREADOR_ID">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQ_RESPONSABLE_ID" Association="CASE_JModel.FK_REQ_RESPONSABLE_ID">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="REQUERIMIENTO_CASOS_USOS" Association="CASE_JModel.REQUERIMIENTO_CASOS_USOS">
+            <End Role="CASOS_USOS" EntitySet="CASOS_USOS" />
+            <End Role="REQUERIMIENTOS" EntitySet="REQUERIMIENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="ROL_OPERACIONES" Association="CASE_JModel.ROL_OPERACIONES">
+            <End Role="OPERACIONES" EntitySet="OPERACIONES" />
+            <End Role="ROLES" EntitySet="ROLES" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CASO_USO_DEPENDENCIAS">
+          <Key>
+            <PropertyRef Name="CASO_USO_ID" />
+            <PropertyRef Name="CASO_USO_DEPENDENDE_ID" />
+          </Key>
+          <Property Name="CASO_USO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CASO_USO_DEPENDENDE_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TIPO_DEPENDENCIA" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="CASOS_USOS" Relationship="CASE_JModel.FK_CUD_CASO_USO_DEPENDENDE_ID" FromRole="CASO_USO_DEPENDENCIAS" ToRole="CASOS_USOS" />
+          <NavigationProperty Name="CASOS_USOS1" Relationship="CASE_JModel.FK_CUD_CASO_USO_ID" FromRole="CASO_USO_DEPENDENCIAS" ToRole="CASOS_USOS" />
+        </EntityType>
+        <EntityType Name="CASO_USO_DETALLES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CASO_USO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DETALLE_TIPO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CONTENIDO" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="CASOS_USOS" Relationship="CASE_JModel.FK_CUDT_CASO_USO_ID" FromRole="CASO_USO_DETALLES" ToRole="CASOS_USOS" />
+          <NavigationProperty Name="DETALLE_TIPOS" Relationship="CASE_JModel.FK_CUDT_DETALLE_TIPO_ID" FromRole="CASO_USO_DETALLES" ToRole="DETALLE_TIPOS" />
+        </EntityType>
+        <EntityType Name="CASOS_USOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CODIGO" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="CONTEXTO" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="IMPORTANCIA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CURSONORMAL" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="CREADOR_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="CASO_USO_DEPENDENCIAS" Relationship="CASE_JModel.FK_CUD_CASO_USO_DEPENDENDE_ID" FromRole="CASOS_USOS" ToRole="CASO_USO_DEPENDENCIAS" />
+          <NavigationProperty Name="CASO_USO_DEPENDENCIAS1" Relationship="CASE_JModel.FK_CUD_CASO_USO_ID" FromRole="CASOS_USOS" ToRole="CASO_USO_DEPENDENCIAS" />
+          <NavigationProperty Name="CASO_USO_DETALLES" Relationship="CASE_JModel.FK_CUDT_CASO_USO_ID" FromRole="CASOS_USOS" ToRole="CASO_USO_DETALLES" />
+          <NavigationProperty Name="USUARIO" Relationship="CASE_JModel.FK_CASOSUSO_CREADOR_ID" FromRole="CASOS_USOS" ToRole="USUARIOS" />
+          <NavigationProperty Name="REQUERIMIENTOS" Relationship="CASE_JModel.REQUERIMIENTO_CASOS_USOS" FromRole="CASOS_USOS" ToRole="REQUERIMIENTOS" />
+        </EntityType>
+        <EntityType Name="DETALLE_TIPOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="CASO_USO_DETALLES" Relationship="CASE_JModel.FK_CUDT_DETALLE_TIPO_ID" FromRole="DETALLE_TIPOS" ToRole="CASO_USO_DETALLES" />
+          <NavigationProperty Name="PROYECTO_DETALLES" Relationship="CASE_JModel.FK_PRYDT_DETALLE_TIPO_ID" FromRole="DETALLE_TIPOS" ToRole="PROYECTO_DETALLES" />
+          <NavigationProperty Name="REQUERIMIENTO_DETALLES" Relationship="CASE_JModel.FK_REQDT_DETALLE_TIPO_ID" FromRole="DETALLE_TIPOS" ToRole="REQUERIMIENTO_DETALLES" />
+        </EntityType>
+        <EntityType Name="DOCUMENTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="TIPO" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="UBICACION" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="REQUERIMIENTO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="REQUERIMIENTO" Relationship="CASE_JModel.FK_DOCS_REQUERIMIENTO_ID" FromRole="DOCUMENTOS" ToRole="REQUERIMIENTOS" />
+        </EntityType>
+        <EntityType Name="INTEGRANTE">
+          <Key>
+            <PropertyRef Name="USUARIO_ID" />
+            <PropertyRef Name="PROYECTO_ID" />
+            <PropertyRef Name="ROL_ID" />
+          </Key>
+          <Property Name="USUARIO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PROYECTO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ROL_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="PROYECTO" Relationship="CASE_JModel.FK_INTEGRANDE_PROYECTO_ID" FromRole="INTEGRANTES" ToRole="PROYECTOS" />
+          <NavigationProperty Name="ROLE" Relationship="CASE_JModel.FK_INTEGRANDE_ROL_ID" FromRole="INTEGRANTES" ToRole="ROLES" />
+          <NavigationProperty Name="USUARIO" Relationship="CASE_JModel.FK_INTEGRANDE_USUARIO_ID" FromRole="INTEGRANTES" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="OPERACIONE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ROLES" Relationship="CASE_JModel.ROL_OPERACIONES" FromRole="OPERACIONES" ToRole="ROLES" />
+        </EntityType>
+        <EntityType Name="PROYECTO_DETALLES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="PROYECTO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DETALLE_TIPO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CONTENIDO" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="DETALLE_TIPOS" Relationship="CASE_JModel.FK_PRYDT_DETALLE_TIPO_ID" FromRole="PROYECTO_DETALLES" ToRole="DETALLE_TIPOS" />
+          <NavigationProperty Name="PROYECTO" Relationship="CASE_JModel.FK_PRYDT_PROYECTO_ID" FromRole="PROYECTO_DETALLES" ToRole="PROYECTOS" />
+        </EntityType>
+        <EntityType Name="PROYECTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="OBJETIVOPRIMARIO" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="ALCANCE" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="PRIORIDAD" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FASE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="VERSION" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="INTEGRANTES" Relationship="CASE_JModel.FK_INTEGRANDE_PROYECTO_ID" FromRole="PROYECTOS" ToRole="INTEGRANTES" />
+          <NavigationProperty Name="PROYECTO_DETALLES" Relationship="CASE_JModel.FK_PRYDT_PROYECTO_ID" FromRole="PROYECTOS" ToRole="PROYECTO_DETALLES" />
+          <NavigationProperty Name="REQUERIMIENTOS" Relationship="CASE_JModel.FK_REQ_PROYECTO_ID" FromRole="PROYECTOS" ToRole="REQUERIMIENTOS" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_CATEGORIAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="REQUERIMIENTOS" Relationship="CASE_JModel.FK_REQ_CATEGORIA_ID" FromRole="REQUERIMIENTO_CATEGORIAS" ToRole="REQUERIMIENTOS" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_DEPENDENCIAS">
+          <Key>
+            <PropertyRef Name="REQ_ID" />
+            <PropertyRef Name="REQ_DEPENDENDE_ID" />
+          </Key>
+          <Property Name="REQ_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="REQ_DEPENDENDE_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TIPO_DEPENDENCIA" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="REQUERIMIENTO" Relationship="CASE_JModel.FK_RQD_REQ_DEPENDENDE_ID" FromRole="REQUERIMIENTO_DEPENDENCIAS" ToRole="REQUERIMIENTOS" />
+          <NavigationProperty Name="REQUERIMIENTO1" Relationship="CASE_JModel.FK_RQD_REQ_ID" FromRole="REQUERIMIENTO_DEPENDENCIAS" ToRole="REQUERIMIENTOS" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_DETALLES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="REQUERIMIENTO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DETALLE_TIPO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CONTENIDO" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="DETALLE_TIPOS" Relationship="CASE_JModel.FK_REQDT_DETALLE_TIPO_ID" FromRole="REQUERIMIENTO_DETALLES" ToRole="DETALLE_TIPOS" />
+          <NavigationProperty Name="REQUERIMIENTO" Relationship="CASE_JModel.FK_REQDT_REQUERIMIENTO_ID" FromRole="REQUERIMIENTO_DETALLES" ToRole="REQUERIMIENTOS" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_ESTADOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="REQUERIMIENTOS" Relationship="CASE_JModel.FK_REQ_ESTADO_ID" FromRole="REQUERIMIENTO_ESTADOS" ToRole="REQUERIMIENTOS" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO_TIPOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="REQUERIMIENTOS" Relationship="CASE_JModel.FK_REQ_TIPO_ID" FromRole="REQUERIMIENTO_TIPOS" ToRole="REQUERIMIENTOS" />
+        </EntityType>
+        <EntityType Name="REQUERIMIENTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CODIGO" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="TITULO" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="COMPLEJIDAD" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FECHAREVISION" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="COSTOESTIMADO" Type="Decimal" Nullable="false" Precision="126" Scale="0" />
+          <Property Name="LINEABASE" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="PROYECTO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TIPO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CATEGORIA_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ESTADO_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="RESPONSABLE_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CREADOR_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="DOCUMENTOS" Relationship="CASE_JModel.FK_DOCS_REQUERIMIENTO_ID" FromRole="REQUERIMIENTOS" ToRole="DOCUMENTOS" />
+          <NavigationProperty Name="PROYECTO" Relationship="CASE_JModel.FK_REQ_PROYECTO_ID" FromRole="REQUERIMIENTOS" ToRole="PROYECTOS" />
+          <NavigationProperty Name="REQUERIMIENTO_CATEGORIAS" Relationship="CASE_JModel.FK_REQ_CATEGORIA_ID" FromRole="REQUERIMIENTOS" ToRole="REQUERIMIENTO_CATEGORIAS" />
+          <NavigationProperty Name="REQUERIMIENTO_DEPENDENCIAS" Relationship="CASE_JModel.FK_RQD_REQ_DEPENDENDE_ID" FromRole="REQUERIMIENTOS" ToRole="REQUERIMIENTO_DEPENDENCIAS" />
+          <NavigationProperty Name="REQUERIMIENTO_DEPENDENCIAS1" Relationship="CASE_JModel.FK_RQD_REQ_ID" FromRole="REQUERIMIENTOS" ToRole="REQUERIMIENTO_DEPENDENCIAS" />
+          <NavigationProperty Name="REQUERIMIENTO_DETALLES" Relationship="CASE_JModel.FK_REQDT_REQUERIMIENTO_ID" FromRole="REQUERIMIENTOS" ToRole="REQUERIMIENTO_DETALLES" />
+          <NavigationProperty Name="REQUERIMIENTO_ESTADOS" Relationship="CASE_JModel.FK_REQ_ESTADO_ID" FromRole="REQUERIMIENTOS" ToRole="REQUERIMIENTO_ESTADOS" />
+          <NavigationProperty Name="REQUERIMIENTO_TIPOS" Relationship="CASE_JModel.FK_REQ_TIPO_ID" FromRole="REQUERIMIENTOS" ToRole="REQUERIMIENTO_TIPOS" />
+          <NavigationProperty Name="USUARIO" Relationship="CASE_JModel.FK_REQ_CREADOR_ID" FromRole="REQUERIMIENTOS" ToRole="USUARIOS" />
+          <NavigationProperty Name="USUARIO1" Relationship="CASE_JModel.FK_REQ_RESPONSABLE_ID" FromRole="REQUERIMIENTOS" ToRole="USUARIOS" />
+          <NavigationProperty Name="CASOS_USOS" Relationship="CASE_JModel.REQUERIMIENTO_CASOS_USOS" FromRole="REQUERIMIENTOS" ToRole="CASOS_USOS" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="INTEGRANTES" Relationship="CASE_JModel.FK_INTEGRANDE_ROL_ID" FromRole="ROLES" ToRole="INTEGRANTES" />
+          <NavigationProperty Name="OPERACIONES" Relationship="CASE_JModel.ROL_OPERACIONES" FromRole="ROLES" ToRole="OPERACIONES" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="CONTRASENA" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="ESTADO" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="CASOS_USOS" Relationship="CASE_JModel.FK_CASOSUSO_CREADOR_ID" FromRole="USUARIOS" ToRole="CASOS_USOS" />
+          <NavigationProperty Name="INTEGRANTES" Relationship="CASE_JModel.FK_INTEGRANDE_USUARIO_ID" FromRole="USUARIOS" ToRole="INTEGRANTES" />
+          <NavigationProperty Name="REQUERIMIENTOS" Relationship="CASE_JModel.FK_REQ_CREADOR_ID" FromRole="USUARIOS" ToRole="REQUERIMIENTOS" />
+          <NavigationProperty Name="REQUERIMIENTOS1" Relationship="CASE_JModel.FK_REQ_RESPONSABLE_ID" FromRole="USUARIOS" ToRole="REQUERIMIENTOS" />
+        </EntityType>
+        <Association Name="FK_CUD_CASO_USO_DEPENDENDE_ID">
+          <End Role="CASOS_USOS" Type="CASE_JModel.CASOS_USOS" Multiplicity="1" />
+          <End Role="CASO_USO_DEPENDENCIAS" Type="CASE_JModel.CASO_USO_DEPENDENCIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CASOS_USOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CASO_USO_DEPENDENCIAS">
+              <PropertyRef Name="CASO_USO_DEPENDENDE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUD_CASO_USO_ID">
+          <End Role="CASOS_USOS" Type="CASE_JModel.CASOS_USOS" Multiplicity="1" />
+          <End Role="CASO_USO_DEPENDENCIAS" Type="CASE_JModel.CASO_USO_DEPENDENCIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CASOS_USOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CASO_USO_DEPENDENCIAS">
+              <PropertyRef Name="CASO_USO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUDT_CASO_USO_ID">
+          <End Role="CASOS_USOS" Type="CASE_JModel.CASOS_USOS" Multiplicity="1" />
+          <End Role="CASO_USO_DETALLES" Type="CASE_JModel.CASO_USO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CASOS_USOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CASO_USO_DETALLES">
+              <PropertyRef Name="CASO_USO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUDT_DETALLE_TIPO_ID">
+          <End Role="DETALLE_TIPOS" Type="CASE_JModel.DETALLE_TIPOS" Multiplicity="1" />
+          <End Role="CASO_USO_DETALLES" Type="CASE_JModel.CASO_USO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DETALLE_TIPOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CASO_USO_DETALLES">
+              <PropertyRef Name="DETALLE_TIPO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CASOSUSO_CREADOR_ID">
+          <End Role="USUARIOS" Type="CASE_JModel.USUARIO" Multiplicity="1" />
+          <End Role="CASOS_USOS" Type="CASE_JModel.CASOS_USOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CASOS_USOS">
+              <PropertyRef Name="CREADOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRYDT_DETALLE_TIPO_ID">
+          <End Role="DETALLE_TIPOS" Type="CASE_JModel.DETALLE_TIPOS" Multiplicity="1" />
+          <End Role="PROYECTO_DETALLES" Type="CASE_JModel.PROYECTO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DETALLE_TIPOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROYECTO_DETALLES">
+              <PropertyRef Name="DETALLE_TIPO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQDT_DETALLE_TIPO_ID">
+          <End Role="DETALLE_TIPOS" Type="CASE_JModel.DETALLE_TIPOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTO_DETALLES" Type="CASE_JModel.REQUERIMIENTO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DETALLE_TIPOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTO_DETALLES">
+              <PropertyRef Name="DETALLE_TIPO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOCS_REQUERIMIENTO_ID">
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="1" />
+          <End Role="DOCUMENTOS" Type="CASE_JModel.DOCUMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DOCUMENTOS">
+              <PropertyRef Name="REQUERIMIENTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INTEGRANDE_PROYECTO_ID">
+          <End Role="PROYECTOS" Type="CASE_JModel.PROYECTO" Multiplicity="1" />
+          <End Role="INTEGRANTES" Type="CASE_JModel.INTEGRANTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROYECTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="INTEGRANTES">
+              <PropertyRef Name="PROYECTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INTEGRANDE_ROL_ID">
+          <End Role="ROLES" Type="CASE_JModel.ROLE" Multiplicity="1" />
+          <End Role="INTEGRANTES" Type="CASE_JModel.INTEGRANTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="INTEGRANTES">
+              <PropertyRef Name="ROL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INTEGRANDE_USUARIO_ID">
+          <End Role="USUARIOS" Type="CASE_JModel.USUARIO" Multiplicity="1" />
+          <End Role="INTEGRANTES" Type="CASE_JModel.INTEGRANTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="INTEGRANTES">
+              <PropertyRef Name="USUARIO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRYDT_PROYECTO_ID">
+          <End Role="PROYECTOS" Type="CASE_JModel.PROYECTO" Multiplicity="1" />
+          <End Role="PROYECTO_DETALLES" Type="CASE_JModel.PROYECTO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROYECTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROYECTO_DETALLES">
+              <PropertyRef Name="PROYECTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_PROYECTO_ID">
+          <End Role="PROYECTOS" Type="CASE_JModel.PROYECTO" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROYECTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="PROYECTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_CATEGORIA_ID">
+          <End Role="REQUERIMIENTO_CATEGORIAS" Type="CASE_JModel.REQUERIMIENTO_CATEGORIAS" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTO_CATEGORIAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="CATEGORIA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RQD_REQ_DEPENDENDE_ID">
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="1" />
+          <End Role="REQUERIMIENTO_DEPENDENCIAS" Type="CASE_JModel.REQUERIMIENTO_DEPENDENCIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTO_DEPENDENCIAS">
+              <PropertyRef Name="REQ_DEPENDENDE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RQD_REQ_ID">
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="1" />
+          <End Role="REQUERIMIENTO_DEPENDENCIAS" Type="CASE_JModel.REQUERIMIENTO_DEPENDENCIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTO_DEPENDENCIAS">
+              <PropertyRef Name="REQ_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQDT_REQUERIMIENTO_ID">
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="1" />
+          <End Role="REQUERIMIENTO_DETALLES" Type="CASE_JModel.REQUERIMIENTO_DETALLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTO_DETALLES">
+              <PropertyRef Name="REQUERIMIENTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_ESTADO_ID">
+          <End Role="REQUERIMIENTO_ESTADOS" Type="CASE_JModel.REQUERIMIENTO_ESTADOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTO_ESTADOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="ESTADO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_TIPO_ID">
+          <End Role="REQUERIMIENTO_TIPOS" Type="CASE_JModel.REQUERIMIENTO_TIPOS" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUERIMIENTO_TIPOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="TIPO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_CREADOR_ID">
+          <End Role="USUARIOS" Type="CASE_JModel.USUARIO" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="CREADOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQ_RESPONSABLE_ID">
+          <End Role="USUARIOS" Type="CASE_JModel.USUARIO" Multiplicity="1" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REQUERIMIENTOS">
+              <PropertyRef Name="RESPONSABLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="REQUERIMIENTO_CASOS_USOS">
+          <End Role="CASOS_USOS" Type="CASE_JModel.CASOS_USOS" Multiplicity="*" />
+          <End Role="REQUERIMIENTOS" Type="CASE_JModel.REQUERIMIENTO" Multiplicity="*" />
+        </Association>
+        <Association Name="ROL_OPERACIONES">
+          <End Role="OPERACIONES" Type="CASE_JModel.OPERACIONE" Multiplicity="*" />
+          <End Role="ROLES" Type="CASE_JModel.ROLE" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CASE_JModelStoreContainer" CdmEntityContainer="CASE_JEntities">
+          <EntitySetMapping Name="CASO_USO_DEPENDENCIAS">
+            <EntityTypeMapping TypeName="CASE_JModel.CASO_USO_DEPENDENCIAS">
+              <MappingFragment StoreEntitySet="CASO_USO_DEPENDENCIAS">
+                <ScalarProperty Name="CASO_USO_ID" ColumnName="CASO_USO_ID" />
+                <ScalarProperty Name="CASO_USO_DEPENDENDE_ID" ColumnName="CASO_USO_DEPENDENDE_ID" />
+                <ScalarProperty Name="TIPO_DEPENDENCIA" ColumnName="TIPO_DEPENDENCIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CASO_USO_DETALLES">
+            <EntityTypeMapping TypeName="CASE_JModel.CASO_USO_DETALLES">
+              <MappingFragment StoreEntitySet="CASO_USO_DETALLES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CASO_USO_ID" ColumnName="CASO_USO_ID" />
+                <ScalarProperty Name="DETALLE_TIPO_ID" ColumnName="DETALLE_TIPO_ID" />
+                <ScalarProperty Name="CONTENIDO" ColumnName="CONTENIDO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CASOS_USOS">
+            <EntityTypeMapping TypeName="CASE_JModel.CASOS_USOS">
+              <MappingFragment StoreEntitySet="CASOS_USOS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="CONTEXTO" ColumnName="CONTEXTO" />
+                <ScalarProperty Name="IMPORTANCIA" ColumnName="IMPORTANCIA" />
+                <ScalarProperty Name="CURSONORMAL" ColumnName="CURSONORMAL" />
+                <ScalarProperty Name="CREADOR_ID" ColumnName="CREADOR_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DETALLE_TIPOS">
+            <EntityTypeMapping TypeName="CASE_JModel.DETALLE_TIPOS">
+              <MappingFragment StoreEntitySet="DETALLE_TIPOS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOCUMENTOS">
+            <EntityTypeMapping TypeName="CASE_JModel.DOCUMENTO">
+              <MappingFragment StoreEntitySet="DOCUMENTOS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="UBICACION" ColumnName="UBICACION" />
+                <ScalarProperty Name="REQUERIMIENTO_ID" ColumnName="REQUERIMIENTO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INTEGRANTES">
+            <EntityTypeMapping TypeName="CASE_JModel.INTEGRANTE">
+              <MappingFragment StoreEntitySet="INTEGRANTES">
+                <ScalarProperty Name="USUARIO_ID" ColumnName="USUARIO_ID" />
+                <ScalarProperty Name="PROYECTO_ID" ColumnName="PROYECTO_ID" />
+                <ScalarProperty Name="ROL_ID" ColumnName="ROL_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPERACIONES">
+            <EntityTypeMapping TypeName="CASE_JModel.OPERACIONE">
+              <MappingFragment StoreEntitySet="OPERACIONES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROYECTO_DETALLES">
+            <EntityTypeMapping TypeName="CASE_JModel.PROYECTO_DETALLES">
+              <MappingFragment StoreEntitySet="PROYECTO_DETALLES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PROYECTO_ID" ColumnName="PROYECTO_ID" />
+                <ScalarProperty Name="DETALLE_TIPO_ID" ColumnName="DETALLE_TIPO_ID" />
+                <ScalarProperty Name="CONTENIDO" ColumnName="CONTENIDO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROYECTOS">
+            <EntityTypeMapping TypeName="CASE_JModel.PROYECTO">
+              <MappingFragment StoreEntitySet="PROYECTOS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="OBJETIVOPRIMARIO" ColumnName="OBJETIVOPRIMARIO" />
+                <ScalarProperty Name="ALCANCE" ColumnName="ALCANCE" />
+                <ScalarProperty Name="PRIORIDAD" ColumnName="PRIORIDAD" />
+                <ScalarProperty Name="FASE" ColumnName="FASE" />
+                <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REQUERIMIENTO_CATEGORIAS">
+            <EntityTypeMapping TypeName="CASE_JModel.REQUERIMIENTO_CATEGORIAS">
+              <MappingFragment StoreEntitySet="REQUERIMIENTO_CATEGORIAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REQUERIMIENTO_DEPENDENCIAS">
+            <EntityTypeMapping TypeName="CASE_JModel.REQUERIMIENTO_DEPENDENCIAS">
+              <MappingFragment StoreEntitySet="REQUERIMIENTO_DEPENDENCIAS">
+                <ScalarProperty Name="REQ_ID" ColumnName="REQ_ID" />
+                <ScalarProperty Name="REQ_DEPENDENDE_ID" ColumnName="REQ_DEPENDENDE_ID" />
+                <ScalarProperty Name="TIPO_DEPENDENCIA" ColumnName="TIPO_DEPENDENCIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REQUERIMIENTO_DETALLES">
+            <EntityTypeMapping TypeName="CASE_JModel.REQUERIMIENTO_DETALLES">
+              <MappingFragment StoreEntitySet="REQUERIMIENTO_DETALLES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="REQUERIMIENTO_ID" ColumnName="REQUERIMIENTO_ID" />
+                <ScalarProperty Name="DETALLE_TIPO_ID" ColumnName="DETALLE_TIPO_ID" />
+                <ScalarProperty Name="CONTENIDO" ColumnName="CONTENIDO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REQUERIMIENTO_ESTADOS">
+            <EntityTypeMapping TypeName="CASE_JModel.REQUERIMIENTO_ESTADOS">
+              <MappingFragment StoreEntitySet="REQUERIMIENTO_ESTADOS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REQUERIMIENTO_TIPOS">
+            <EntityTypeMapping TypeName="CASE_JModel.REQUERIMIENTO_TIPOS">
+              <MappingFragment StoreEntitySet="REQUERIMIENTO_TIPOS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REQUERIMIENTOS">
+            <EntityTypeMapping TypeName="CASE_JModel.REQUERIMIENTO">
+              <MappingFragment StoreEntitySet="REQUERIMIENTOS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="TITULO" ColumnName="TITULO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="COMPLEJIDAD" ColumnName="COMPLEJIDAD" />
+                <ScalarProperty Name="FECHAREVISION" ColumnName="FECHAREVISION" />
+                <ScalarProperty Name="COSTOESTIMADO" ColumnName="COSTOESTIMADO" />
+                <ScalarProperty Name="LINEABASE" ColumnName="LINEABASE" />
+                <ScalarProperty Name="PROYECTO_ID" ColumnName="PROYECTO_ID" />
+                <ScalarProperty Name="TIPO_ID" ColumnName="TIPO_ID" />
+                <ScalarProperty Name="CATEGORIA_ID" ColumnName="CATEGORIA_ID" />
+                <ScalarProperty Name="ESTADO_ID" ColumnName="ESTADO_ID" />
+                <ScalarProperty Name="RESPONSABLE_ID" ColumnName="RESPONSABLE_ID" />
+                <ScalarProperty Name="CREADOR_ID" ColumnName="CREADOR_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLES">
+            <EntityTypeMapping TypeName="CASE_JModel.ROLE">
+              <MappingFragment StoreEntitySet="ROLES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOS">
+            <EntityTypeMapping TypeName="CASE_JModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIOS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="REQUERIMIENTO_CASOS_USOS" TypeName="CASE_JModel.REQUERIMIENTO_CASOS_USOS" StoreEntitySet="REQUERIMIENTO_CASOS_USOS">
+            <EndProperty Name="CASOS_USOS">
+              <ScalarProperty Name="ID" ColumnName="CASO_USO_ID" />
+            </EndProperty>
+            <EndProperty Name="REQUERIMIENTOS">
+              <ScalarProperty Name="ID" ColumnName="REQUERIMIENTO_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ROL_OPERACIONES" TypeName="CASE_JModel.ROL_OPERACIONES" StoreEntitySet="ROL_OPERACIONES">
+            <EndProperty Name="OPERACIONES">
+              <ScalarProperty Name="ID" ColumnName="OPERACION_ID" />
+            </EndProperty>
+            <EndProperty Name="ROLES">
+              <ScalarProperty Name="ID" ColumnName="ROL_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

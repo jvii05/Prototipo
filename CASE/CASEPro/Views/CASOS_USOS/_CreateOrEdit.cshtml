@@ -1,0 +1,52 @@
+@model CASEPro.Models.CASOS_USOS
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CODIGO)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CODIGO)
+    @Html.ValidationMessageFor(model => model.CODIGO)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DESCRIPCION)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DESCRIPCION)
+    @Html.ValidationMessageFor(model => model.DESCRIPCION)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CONTEXTO)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CONTEXTO)
+    @Html.ValidationMessageFor(model => model.CONTEXTO)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.IMPORTANCIA)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.IMPORTANCIA)
+    @Html.ValidationMessageFor(model => model.IMPORTANCIA)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CURSONORMAL)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CURSONORMAL)
+    @Html.ValidationMessageFor(model => model.CURSONORMAL)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CREADOR_ID)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CREADOR_ID)
+    @Html.ValidationMessageFor(model => model.CREADOR_ID)
+</div>
+

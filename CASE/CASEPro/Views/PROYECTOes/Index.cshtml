@@ -1,0 +1,83 @@
+@model IEnumerable<CASEPro.Models.PROYECTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            NOMBRE
+        </th>
+        <th>
+            OBJETIVOPRIMARIO
+        </th>
+        <th>
+            ALCANCE
+        </th>
+        <th>
+            PRIORIDAD
+        </th>
+        <th>
+            FASE
+        </th>
+        <th>
+            VERSION
+        </th>
+        <th>
+            INTEGRANTES
+        </th>
+        <th>
+            PROYECTO_DETALLES
+        </th>
+        <th>
+            REQUERIMIENTOS
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        <td>
+			@item.NOMBRE
+        </td>
+        <td>
+			@item.OBJETIVOPRIMARIO
+        </td>
+        <td>
+			@item.ALCANCE
+        </td>
+        <td>
+			@String.Format("{0:F}", item.PRIORIDAD)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.FASE)
+        </td>
+        <td>
+			@item.VERSION
+        </td>
+        <td>
+			@(item.INTEGRANTES == null ? "None" : item.INTEGRANTES.Count.ToString())
+        </td>
+        <td>
+			@(item.PROYECTO_DETALLES == null ? "None" : item.PROYECTO_DETALLES.Count.ToString())
+        </td>
+        <td>
+			@(item.REQUERIMIENTOS == null ? "None" : item.REQUERIMIENTOS.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

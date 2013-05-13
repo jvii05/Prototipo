@@ -1,0 +1,50 @@
+@model CASEPro.Models.CASOS_USOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>CASOS_USOS</legend>
+
+    <div class="display-label">CODIGO</div>
+    <div class="display-field">@Model.CODIGO</div>
+
+    <div class="display-label">DESCRIPCION</div>
+    <div class="display-field">@Model.DESCRIPCION</div>
+
+    <div class="display-label">CONTEXTO</div>
+    <div class="display-field">@Model.CONTEXTO</div>
+
+    <div class="display-label">IMPORTANCIA</div>
+    <div class="display-field">@String.Format("{0:F}", Model.IMPORTANCIA)</div>
+
+    <div class="display-label">CURSONORMAL</div>
+    <div class="display-field">@Model.CURSONORMAL</div>
+
+    <div class="display-label">CREADOR_ID</div>
+    <div class="display-field">@String.Format("{0:F}", Model.CREADOR_ID)</div>
+
+    <div class="display-label">CASO_USO_DEPENDENCIAS</div>
+    <div class="display-field">@(Model.CASO_USO_DEPENDENCIAS == null ? "None" : Model.CASO_USO_DEPENDENCIAS.Count.ToString())</div>
+
+    <div class="display-label">CASO_USO_DEPENDENCIAS1</div>
+    <div class="display-field">@(Model.CASO_USO_DEPENDENCIAS1 == null ? "None" : Model.CASO_USO_DEPENDENCIAS1.Count.ToString())</div>
+
+    <div class="display-label">CASO_USO_DETALLES</div>
+    <div class="display-field">@(Model.CASO_USO_DETALLES == null ? "None" : Model.CASO_USO_DETALLES.Count.ToString())</div>
+
+    <div class="display-label">USUARIO</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.USUARIO).ToString()</div>
+
+    <div class="display-label">REQUERIMIENTOS</div>
+    <div class="display-field">@(Model.REQUERIMIENTOS == null ? "None" : Model.REQUERIMIENTOS.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

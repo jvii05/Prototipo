@@ -1,0 +1,53 @@
+@model IEnumerable<CASEPro.Models.DETALLE_TIPOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            NOMBRE
+        </th>
+        <th>
+            CASO_USO_DETALLES
+        </th>
+        <th>
+            PROYECTO_DETALLES
+        </th>
+        <th>
+            REQUERIMIENTO_DETALLES
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        <td>
+			@item.NOMBRE
+        </td>
+        <td>
+			@(item.CASO_USO_DETALLES == null ? "None" : item.CASO_USO_DETALLES.Count.ToString())
+        </td>
+        <td>
+			@(item.PROYECTO_DETALLES == null ? "None" : item.PROYECTO_DETALLES.Count.ToString())
+        </td>
+        <td>
+			@(item.REQUERIMIENTO_DETALLES == null ? "None" : item.REQUERIMIENTO_DETALLES.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

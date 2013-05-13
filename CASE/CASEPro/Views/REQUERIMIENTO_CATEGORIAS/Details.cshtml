@@ -1,0 +1,23 @@
+@model CASEPro.Models.REQUERIMIENTO_CATEGORIAS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>REQUERIMIENTO_CATEGORIAS</legend>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">REQUERIMIENTOS</div>
+    <div class="display-field">@(Model.REQUERIMIENTOS == null ? "None" : Model.REQUERIMIENTOS.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -1,0 +1,29 @@
+@model CASE.Models.USER
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>USER</legend>
+
+    <div class="display-label">NAME</div>
+    <div class="display-field">@Model.NAME</div>
+
+    <div class="display-label">PASSWORD</div>
+    <div class="display-field">@Model.PASSWORD</div>
+
+    <div class="display-label">EMAIL</div>
+    <div class="display-field">@Model.EMAIL</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

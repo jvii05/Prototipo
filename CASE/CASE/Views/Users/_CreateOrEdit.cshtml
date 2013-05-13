@@ -1,0 +1,28 @@
+@model CASE.Models.USER
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.NAME)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.NAME)
+    @Html.ValidationMessageFor(model => model.NAME)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.PASSWORD)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.PASSWORD)
+    @Html.ValidationMessageFor(model => model.PASSWORD)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.EMAIL)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.EMAIL)
+    @Html.ValidationMessageFor(model => model.EMAIL)
+</div>
+

@@ -1,0 +1,44 @@
+@model CASEPro.Models.PROYECTO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PROYECTO</legend>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">OBJETIVOPRIMARIO</div>
+    <div class="display-field">@Model.OBJETIVOPRIMARIO</div>
+
+    <div class="display-label">ALCANCE</div>
+    <div class="display-field">@Model.ALCANCE</div>
+
+    <div class="display-label">PRIORIDAD</div>
+    <div class="display-field">@String.Format("{0:F}", Model.PRIORIDAD)</div>
+
+    <div class="display-label">FASE</div>
+    <div class="display-field">@String.Format("{0:F}", Model.FASE)</div>
+
+    <div class="display-label">VERSION</div>
+    <div class="display-field">@Model.VERSION</div>
+
+    <div class="display-label">INTEGRANTES</div>
+    <div class="display-field">@(Model.INTEGRANTES == null ? "None" : Model.INTEGRANTES.Count.ToString())</div>
+
+    <div class="display-label">PROYECTO_DETALLES</div>
+    <div class="display-field">@(Model.PROYECTO_DETALLES == null ? "None" : Model.PROYECTO_DETALLES.Count.ToString())</div>
+
+    <div class="display-label">REQUERIMIENTOS</div>
+    <div class="display-field">@(Model.REQUERIMIENTOS == null ? "None" : Model.REQUERIMIENTOS.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

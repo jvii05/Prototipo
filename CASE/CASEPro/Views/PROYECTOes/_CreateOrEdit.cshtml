@@ -1,0 +1,52 @@
+@model CASEPro.Models.PROYECTO
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.NOMBRE)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.NOMBRE)
+    @Html.ValidationMessageFor(model => model.NOMBRE)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.OBJETIVOPRIMARIO)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.OBJETIVOPRIMARIO)
+    @Html.ValidationMessageFor(model => model.OBJETIVOPRIMARIO)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ALCANCE)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ALCANCE)
+    @Html.ValidationMessageFor(model => model.ALCANCE)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.PRIORIDAD)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.PRIORIDAD)
+    @Html.ValidationMessageFor(model => model.PRIORIDAD)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.FASE)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.FASE)
+    @Html.ValidationMessageFor(model => model.FASE)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.VERSION)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.VERSION)
+    @Html.ValidationMessageFor(model => model.VERSION)
+</div>
+

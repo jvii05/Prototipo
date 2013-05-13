@@ -1,0 +1,95 @@
+@model IEnumerable<CASEPro.Models.CASOS_USOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            CODIGO
+        </th>
+        <th>
+            DESCRIPCION
+        </th>
+        <th>
+            CONTEXTO
+        </th>
+        <th>
+            IMPORTANCIA
+        </th>
+        <th>
+            CURSONORMAL
+        </th>
+        <th>
+            CREADOR_ID
+        </th>
+        <th>
+            CASO_USO_DEPENDENCIAS
+        </th>
+        <th>
+            CASO_USO_DEPENDENCIAS1
+        </th>
+        <th>
+            CASO_USO_DETALLES
+        </th>
+        <th>
+            USUARIO
+        </th>
+        <th>
+            REQUERIMIENTOS
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        <td>
+			@item.CODIGO
+        </td>
+        <td>
+			@item.DESCRIPCION
+        </td>
+        <td>
+			@item.CONTEXTO
+        </td>
+        <td>
+			@String.Format("{0:F}", item.IMPORTANCIA)
+        </td>
+        <td>
+			@item.CURSONORMAL
+        </td>
+        <td>
+			@String.Format("{0:F}", item.CREADOR_ID)
+        </td>
+        <td>
+			@(item.CASO_USO_DEPENDENCIAS == null ? "None" : item.CASO_USO_DEPENDENCIAS.Count.ToString())
+        </td>
+        <td>
+			@(item.CASO_USO_DEPENDENCIAS1 == null ? "None" : item.CASO_USO_DEPENDENCIAS1.Count.ToString())
+        </td>
+        <td>
+			@(item.CASO_USO_DETALLES == null ? "None" : item.CASO_USO_DETALLES.Count.ToString())
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.USUARIO).ToString()
+        </td>
+        <td>
+			@(item.REQUERIMIENTOS == null ? "None" : item.REQUERIMIENTOS.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

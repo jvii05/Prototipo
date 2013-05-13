@@ -1,0 +1,59 @@
+@model IEnumerable<CASEPro.Models.REQUERIMIENTO_DETALLES>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            REQUERIMIENTO_ID
+        </th>
+        <th>
+            DETALLE_TIPO_ID
+        </th>
+        <th>
+            CONTENIDO
+        </th>
+        <th>
+            DETALLE_TIPOS
+        </th>
+        <th>
+            REQUERIMIENTO
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        <td>
+			@String.Format("{0:F}", item.REQUERIMIENTO_ID)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.DETALLE_TIPO_ID)
+        </td>
+        <td>
+			@item.CONTENIDO
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.DETALLE_TIPOS).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.REQUERIMIENTO).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

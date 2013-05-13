@@ -1,0 +1,92 @@
+@model CASEPro.Models.REQUERIMIENTO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>REQUERIMIENTO</legend>
+
+    <div class="display-label">CODIGO</div>
+    <div class="display-field">@Model.CODIGO</div>
+
+    <div class="display-label">TITULO</div>
+    <div class="display-field">@Model.TITULO</div>
+
+    <div class="display-label">DESCRIPCION</div>
+    <div class="display-field">@Model.DESCRIPCION</div>
+
+    <div class="display-label">COMPLEJIDAD</div>
+    <div class="display-field">@String.Format("{0:F}", Model.COMPLEJIDAD)</div>
+
+    <div class="display-label">FECHAREVISION</div>
+    <div class="display-field">@String.Format("{0:g}", Model.FECHAREVISION)</div>
+
+    <div class="display-label">COSTOESTIMADO</div>
+    <div class="display-field">@String.Format("{0:F}", Model.COSTOESTIMADO)</div>
+
+    <div class="display-label">LINEABASE</div>
+    <div class="display-field">@Model.LINEABASE</div>
+
+    <div class="display-label">PROYECTO_ID</div>
+    <div class="display-field">@String.Format("{0:F}", Model.PROYECTO_ID)</div>
+
+    <div class="display-label">TIPO_ID</div>
+    <div class="display-field">@String.Format("{0:F}", Model.TIPO_ID)</div>
+
+    <div class="display-label">CATEGORIA_ID</div>
+    <div class="display-field">@String.Format("{0:F}", Model.CATEGORIA_ID)</div>
+
+    <div class="display-label">ESTADO_ID</div>
+    <div class="display-field">@String.Format("{0:F}", Model.ESTADO_ID)</div>
+
+    <div class="display-label">RESPONSABLE_ID</div>
+    <div class="display-field">@String.Format("{0:F}", Model.RESPONSABLE_ID)</div>
+
+    <div class="display-label">CREADOR_ID</div>
+    <div class="display-field">@String.Format("{0:F}", Model.CREADOR_ID)</div>
+
+    <div class="display-label">DOCUMENTOS</div>
+    <div class="display-field">@(Model.DOCUMENTOS == null ? "None" : Model.DOCUMENTOS.Count.ToString())</div>
+
+    <div class="display-label">PROYECTO</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.PROYECTO).ToString()</div>
+
+    <div class="display-label">REQUERIMIENTO_CATEGORIAS</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.REQUERIMIENTO_CATEGORIAS).ToString()</div>
+
+    <div class="display-label">REQUERIMIENTO_DEPENDENCIAS</div>
+    <div class="display-field">@(Model.REQUERIMIENTO_DEPENDENCIAS == null ? "None" : Model.REQUERIMIENTO_DEPENDENCIAS.Count.ToString())</div>
+
+    <div class="display-label">REQUERIMIENTO_DEPENDENCIAS1</div>
+    <div class="display-field">@(Model.REQUERIMIENTO_DEPENDENCIAS1 == null ? "None" : Model.REQUERIMIENTO_DEPENDENCIAS1.Count.ToString())</div>
+
+    <div class="display-label">REQUERIMIENTO_DETALLES</div>
+    <div class="display-field">@(Model.REQUERIMIENTO_DETALLES == null ? "None" : Model.REQUERIMIENTO_DETALLES.Count.ToString())</div>
+
+    <div class="display-label">REQUERIMIENTO_ESTADOS</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.REQUERIMIENTO_ESTADOS).ToString()</div>
+
+    <div class="display-label">REQUERIMIENTO_TIPOS</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.REQUERIMIENTO_TIPOS).ToString()</div>
+
+    <div class="display-label">USUARIO</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.USUARIO).ToString()</div>
+
+    <div class="display-label">USUARIO1</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.USUARIO1).ToString()</div>
+
+    <div class="display-label">CASOS_USOS</div>
+    <div class="display-field">@(Model.CASOS_USOS == null ? "None" : Model.CASOS_USOS.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

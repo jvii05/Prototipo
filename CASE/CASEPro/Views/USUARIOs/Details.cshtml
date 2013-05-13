@@ -1,0 +1,38 @@
+@model CASEPro.Models.USUARIO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>USUARIO</legend>
+
+    <div class="display-label">EMAIL</div>
+    <div class="display-field">@Model.EMAIL</div>
+
+    <div class="display-label">CONTRASENA</div>
+    <div class="display-field">@Model.CONTRASENA</div>
+
+    <div class="display-label">ESTADO</div>
+    <div class="display-field">@Model.ESTADO</div>
+
+    <div class="display-label">CASOS_USOS</div>
+    <div class="display-field">@(Model.CASOS_USOS == null ? "None" : Model.CASOS_USOS.Count.ToString())</div>
+
+    <div class="display-label">INTEGRANTES</div>
+    <div class="display-field">@(Model.INTEGRANTES == null ? "None" : Model.INTEGRANTES.Count.ToString())</div>
+
+    <div class="display-label">REQUERIMIENTOS</div>
+    <div class="display-field">@(Model.REQUERIMIENTOS == null ? "None" : Model.REQUERIMIENTOS.Count.ToString())</div>
+
+    <div class="display-label">REQUERIMIENTOS1</div>
+    <div class="display-field">@(Model.REQUERIMIENTOS1 == null ? "None" : Model.REQUERIMIENTOS1.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

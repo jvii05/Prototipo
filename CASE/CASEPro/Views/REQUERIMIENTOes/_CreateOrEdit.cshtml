@@ -1,0 +1,108 @@
+@model CASEPro.Models.REQUERIMIENTO
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CODIGO)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CODIGO)
+    @Html.ValidationMessageFor(model => model.CODIGO)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.TITULO)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.TITULO)
+    @Html.ValidationMessageFor(model => model.TITULO)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DESCRIPCION)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DESCRIPCION)
+    @Html.ValidationMessageFor(model => model.DESCRIPCION)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.COMPLEJIDAD)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.COMPLEJIDAD)
+    @Html.ValidationMessageFor(model => model.COMPLEJIDAD)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.FECHAREVISION)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.FECHAREVISION)
+    @Html.ValidationMessageFor(model => model.FECHAREVISION)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.COSTOESTIMADO)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.COSTOESTIMADO)
+    @Html.ValidationMessageFor(model => model.COSTOESTIMADO)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.LINEABASE)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.LINEABASE)
+    @Html.ValidationMessageFor(model => model.LINEABASE)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.PROYECTO_ID)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.PROYECTO_ID)
+    @Html.ValidationMessageFor(model => model.PROYECTO_ID)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.TIPO_ID)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.TIPO_ID)
+    @Html.ValidationMessageFor(model => model.TIPO_ID)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CATEGORIA_ID)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CATEGORIA_ID)
+    @Html.ValidationMessageFor(model => model.CATEGORIA_ID)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ESTADO_ID)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ESTADO_ID)
+    @Html.ValidationMessageFor(model => model.ESTADO_ID)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.RESPONSABLE_ID)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.RESPONSABLE_ID)
+    @Html.ValidationMessageFor(model => model.RESPONSABLE_ID)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CREADOR_ID)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CREADOR_ID)
+    @Html.ValidationMessageFor(model => model.CREADOR_ID)
+</div>
+

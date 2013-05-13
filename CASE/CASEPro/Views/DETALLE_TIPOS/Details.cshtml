@@ -1,0 +1,29 @@
+@model CASEPro.Models.DETALLE_TIPOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DETALLE_TIPOS</legend>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">CASO_USO_DETALLES</div>
+    <div class="display-field">@(Model.CASO_USO_DETALLES == null ? "None" : Model.CASO_USO_DETALLES.Count.ToString())</div>
+
+    <div class="display-label">PROYECTO_DETALLES</div>
+    <div class="display-field">@(Model.PROYECTO_DETALLES == null ? "None" : Model.PROYECTO_DETALLES.Count.ToString())</div>
+
+    <div class="display-label">REQUERIMIENTO_DETALLES</div>
+    <div class="display-field">@(Model.REQUERIMIENTO_DETALLES == null ? "None" : Model.REQUERIMIENTO_DETALLES.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -1,0 +1,26 @@
+@model CASEPro.Models.ROLE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ROLE</legend>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">INTEGRANTES</div>
+    <div class="display-field">@(Model.INTEGRANTES == null ? "None" : Model.INTEGRANTES.Count.ToString())</div>
+
+    <div class="display-label">OPERACIONES</div>
+    <div class="display-field">@(Model.OPERACIONES == null ? "None" : Model.OPERACIONES.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -1,0 +1,32 @@
+@model CASEPro.Models.DETALLE_TIPOS
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>DETALLE_TIPOS</legend>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">CASO_USO_DETALLES</div>
+    <div class="display-field">@(Model.CASO_USO_DETALLES == null ? "None" : Model.CASO_USO_DETALLES.Count.ToString())</div>
+
+    <div class="display-label">PROYECTO_DETALLES</div>
+    <div class="display-field">@(Model.PROYECTO_DETALLES == null ? "None" : Model.PROYECTO_DETALLES.Count.ToString())</div>
+
+    <div class="display-label">REQUERIMIENTO_DETALLES</div>
+    <div class="display-field">@(Model.REQUERIMIENTO_DETALLES == null ? "None" : Model.REQUERIMIENTO_DETALLES.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

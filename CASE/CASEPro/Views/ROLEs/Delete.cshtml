@@ -1,0 +1,29 @@
+@model CASEPro.Models.ROLE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ROLE</legend>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">INTEGRANTES</div>
+    <div class="display-field">@(Model.INTEGRANTES == null ? "None" : Model.INTEGRANTES.Count.ToString())</div>
+
+    <div class="display-label">OPERACIONES</div>
+    <div class="display-field">@(Model.OPERACIONES == null ? "None" : Model.OPERACIONES.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

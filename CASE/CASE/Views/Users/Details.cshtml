@@ -1,0 +1,26 @@
+@model CASE.Models.USER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>USER</legend>
+
+    <div class="display-label">NAME</div>
+    <div class="display-field">@Model.NAME</div>
+
+    <div class="display-label">PASSWORD</div>
+    <div class="display-field">@Model.PASSWORD</div>
+
+    <div class="display-label">EMAIL</div>
+    <div class="display-field">@Model.EMAIL</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c7e3a7d5c04745ab96ddc6232903ccf5" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="CASE_JModel.CASO_USO_DEPENDENCIAS" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.CASO_USO_DETALLES" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.CASOS_USOS" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.DETALLE_TIPOS" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.DOCUMENTO" Width="1.5" PointX="10.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.INTEGRANTE" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.OPERACIONE" Width="1.5" PointX="1.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.PROYECTO_DETALLES" Width="1.5" PointX="8.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.PROYECTO" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.REQUERIMIENTO_CATEGORIAS" Width="1.5" PointX="8.875" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.REQUERIMIENTO_DEPENDENCIAS" Width="1.5" PointX="10.125" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.REQUERIMIENTO_DETALLES" Width="1.5" PointX="12.125" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.REQUERIMIENTO_ESTADOS" Width="1.5" PointX="10.875" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.REQUERIMIENTO_TIPOS" Width="1.5" PointX="12.875" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.REQUERIMIENTO" Width="1.5" PointX="7.875" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.ROLE" Width="1.5" PointX="3.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASE_JModel.USUARIO" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="CASE_JModel.FK_CUD_CASO_USO_DEPENDENDE_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_CUD_CASO_USO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_CUDT_CASO_USO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_CUDT_DETALLE_TIPO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_CASOSUSO_CREADOR_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_PRYDT_DETALLE_TIPO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_REQDT_DETALLE_TIPO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_DOCS_REQUERIMIENTO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_INTEGRANDE_PROYECTO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_INTEGRANDE_ROL_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_INTEGRANDE_USUARIO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_PRYDT_PROYECTO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_REQ_PROYECTO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_REQ_CATEGORIA_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_RQD_REQ_DEPENDENDE_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_RQD_REQ_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_REQDT_REQUERIMIENTO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_REQ_ESTADO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_REQ_TIPO_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_REQ_CREADOR_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.FK_REQ_RESPONSABLE_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.REQUERIMIENTO_CASOS_USOS" ManuallyRouted="false" />
+        <AssociationConnector Association="CASE_JModel.ROL_OPERACIONES" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

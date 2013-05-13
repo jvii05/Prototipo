@@ -1,0 +1,26 @@
+@model CASEPro.Models.REQUERIMIENTO_CATEGORIAS
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>REQUERIMIENTO_CATEGORIAS</legend>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">REQUERIMIENTOS</div>
+    <div class="display-field">@(Model.REQUERIMIENTOS == null ? "None" : Model.REQUERIMIENTOS.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+
